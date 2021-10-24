@@ -1,6 +1,15 @@
-const db = {
-  users: {},
-  books: {},
+import fetch from "node-fetch";
+
+const apiBase = "http://localhost:3000";
+
+const Endpoints = {
+  users: '/users',
 };
 
-console.log(db);
+const getUsersEndpoint = `${apiBase}${Endpoints.users}`;
+
+console.log(getUsersEndpoint);
+
+fetch(getUsersEndpoint)
+  .then((response) => response.json())
+  .then((json) => console.log(json));

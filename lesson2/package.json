@@ -1,5 +1,9 @@
 {
+  "type": "module",
   "devDependencies": {
     "json-server": "^0.17.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0"
   }
 }

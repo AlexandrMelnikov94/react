@@ -6,10 +6,35 @@ const Endpoints = {
   users: '/users',
 };
 
-const getUsersEndpoint = `${apiBase}${Endpoints.users}`;
+const getUsers = async () => {
+  const response = await fetch(`${apiBase}${Endpoints.users}`)
+  const users = await response.json();
 
-console.log(getUsersEndpoint);
+ return users;
+}
 
-fetch(getUsersEndpoint)
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+const addUser = async (user) => {
+  const newUserResponse = await fetch(`${apiBase}${Endpoints.users}`, {
+    method: 'POST',
+    headers: {'Content-Type' : 'application/json; charset=utf-8'},
+    body: JSON.stringify(user),
+  });
+
+  const result = await newUserResponse.json();
+  return result;
+}
+
+const main = async () => {
+
+  console.log(await getUsers());
+
+  const user = {
+    firstName: 'Jhon',
+    lastName: 'Doe',
+    birthDate: '1995-05-23',
+  };
+
+  console.log(await addUser(user));
+};
+
+main().then();

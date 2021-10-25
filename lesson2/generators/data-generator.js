@@ -1,4 +1,4 @@
-import {getRandomIntInclusive} from "./util/util.js";
+import {getRandomIntInclusive} from "../util/util.js";
 
 const getRandomBirthDate = (minAge, maxAge) => {
   const today = new Date();

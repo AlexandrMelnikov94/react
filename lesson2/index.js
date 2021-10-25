@@ -1,40 +1,16 @@
-import fetch from "node-fetch";
+import {getRandomUser} from "./generators/user-generator.js";
+import {addUser} from "./api/user-api.js";
 
-const apiBase = "http://localhost:3000";
+const main = async (usersCount) => {
+  const results = [];
 
-const Endpoints = {
-  users: '/users',
+  for (let i = 0; i < usersCount; i++) {
+    results.push(addUser(getRandomUser(13,18)));
+  }
+
+  Promise.all(results);
 };
 
-const getUsers = async () => {
-  const response = await fetch(`${apiBase}${Endpoints.users}`)
-  const users = await response.json();
+const usersCount = parseInt(process.argv[2], 10);
 
- return users;
-}
-
-const addUser = async (user) => {
-  const newUserResponse = await fetch(`${apiBase}${Endpoints.users}`, {
-    method: 'POST',
-    headers: {'Content-Type' : 'application/json; charset=utf-8'},
-    body: JSON.stringify(user),
-  });
-
-  const result = await newUserResponse.json();
-  return result;
-}
-
-const main = async () => {
-
-  console.log(await getUsers());
-
-  const user = {
-    firstName: 'Jhon',
-    lastName: 'Doe',
-    birthDate: '1995-05-23',
-  };
-
-  console.log(await addUser(user));
-};
-
-main().then();
+main(usersCount).then();

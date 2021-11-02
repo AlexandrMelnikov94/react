@@ -1,40 +1,22 @@
 {
   "users": [
     {
-      "firstName": "Elijah",
-      "lastName": "William",
-      "birthDate": "2003-03-13T10:29:41.206Z",
+      "firstName": "Benjamin",
+      "lastName": "Martinez",
+      "birthDate": "2004-01-02T09:37:55.489Z",
       "id": 1
     },
     {
-      "firstName": "William",
-      "lastName": "Liam",
-      "birthDate": "2003-02-06T10:29:41.220Z",
+      "firstName": "Noah",
+      "lastName": "Jones",
+      "birthDate": "2007-08-01T08:37:55.504Z",
       "id": 2
     },
     {
       "firstName": "Liam",
-      "lastName": "Lucas",
-      "birthDate": "2007-10-17T09:29:41.221Z",
+      "lastName": "Rodriguez",
+      "birthDate": "2007-05-01T08:37:55.504Z",
       "id": 3
-    },
-    {
-      "firstName": "Elijah",
-      "lastName": "James",
-      "birthDate": "2008-10-11T09:30:19.212Z",
-      "id": 4
-    },
-    {
-      "firstName": "Noah",
-      "lastName": "Noah",
-      "birthDate": "2003-07-05T09:30:19.225Z",
-      "id": 5
-    },
-    {
-      "firstName": "Liam",
-      "lastName": "Alexander",
-      "birthDate": "2003-04-21T09:30:19.226Z",
-      "id": 6
     }
   ],
   "books": [],

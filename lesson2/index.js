@@ -1,6 +1,7 @@
 import {getRandomUser} from "./generators/user-generator.js";
 import {addUser} from "./api/user-api.js";
 import {rangeInclusive} from "./util/util.js";
+import {getRandomUsersNumber} from "./util/util.js";
 
 const main = async (usersCount) =>
   Promise.all(
@@ -9,6 +10,6 @@ const main = async (usersCount) =>
     )
   );
 
-const usersCount = parseInt(process.argv[2], 10);
+const usersCount = getRandomUsersNumber(10, 30);
 
 main(usersCount).then();

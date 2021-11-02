@@ -1,3 +1,7 @@
+const getRandomUsersNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 const getRandomIntInclusive = (min, max) => {
   const roundedMin = Math.ceil(min);
   const roundedMax = Math.floor(max);
@@ -14,4 +18,4 @@ const rangeInclusive = (from, to) => {
   return indexes.map(index => index + lowIndex);
 };
 
-export {getRandomIntInclusive, rangeInclusive};
+export {getRandomIntInclusive, rangeInclusive, getRandomUsersNumber};

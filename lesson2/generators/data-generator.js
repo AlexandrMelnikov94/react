@@ -15,4 +15,4 @@ const getRandomBirthDate = (minAge, maxAge) => {
   return birthDate;
 }
 
-export { getRandomBirthDate };
+export {getRandomBirthDate};

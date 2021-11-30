@@ -1,5 +1,5 @@
 import {getRandomUser} from "./generators/user-generator.js";
-import {addUser} from "./api/user-api.js";
+import {addUser, getUsers} from "./api/user-api.js";
 import {rangeInclusive} from "./util/util.js";
 import {getRandomUsersNumber} from "./util/util.js";
 
@@ -10,6 +10,8 @@ const main = async (usersCount) =>
     )
   );
 
-const usersCount = getRandomUsersNumber(10, 30);
+const usersCount = getRandomUsersNumber(6, 10);
+console.log(usersCount);
+
 
 main(usersCount).then();

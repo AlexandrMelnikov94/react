@@ -24,13 +24,21 @@ class App extends Component {
     return arr
   }
 
+  addRandomNumber = () => {
+    const {value} = this.state;
+    this.setState({
+      value: [...value, this.generateRandomItemsNumber()]
+    })
+  }
+
   render() {
     const {value} = this.state;
 
     return (
       <>
-        < Count value={value.length}/>
+        <Count value={value.length}/>
         <List value={value} />
+        <button onClick = {this.addRandomNumber}>Add</button>
       </>
     )
   }

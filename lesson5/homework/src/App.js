@@ -1,5 +1,6 @@
 import List from "./List";
 import {Component} from "react";
+import Count from "./Count";
 
 class App extends Component {
   constructor() {
@@ -28,6 +29,7 @@ class App extends Component {
 
     return (
       <>
+        < Count value={value.length}/>
         <List value={value} />
       </>
     )

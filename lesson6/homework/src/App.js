@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from "./button";
 
 const colors = ['red', 'yellow', 'green', 'blue', 'orange'];
 
@@ -17,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    return <button style={{backgroundColor: this.state.colors}}>Colors</button>
+    return <Button style={{backgroundColor: this.state.colors}}/>
   }
 }
 

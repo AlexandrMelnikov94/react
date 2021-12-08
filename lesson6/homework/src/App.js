@@ -12,7 +12,7 @@ class App extends Component {
       colors: 'red',
     }
     setInterval(() => {
-      let randomColor = colors[[Math.floor(Math.random() * colors.length)]];
+      let randomColor = colors[Math.floor(Math.random() * colors.length)];
       this.setState(() => ({colors: randomColor}))
     }, 1000);
   }

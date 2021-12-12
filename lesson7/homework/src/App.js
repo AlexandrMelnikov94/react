@@ -64,7 +64,16 @@ export default class App extends Component {
           onKeyDown={this.handleSearchSubmit}
         />
 
-        {isLoading ? <div class="loader"></div> : null}
+        {isLoading ? <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div> : null}
 
         {weather ? (
           <div>

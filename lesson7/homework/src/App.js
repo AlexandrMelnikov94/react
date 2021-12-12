@@ -14,6 +14,7 @@ export default class App extends Component {
       searchQuery: '',
       weather: null,
       isLoading: false,
+      disabled: false
     };
   }
 
@@ -34,6 +35,7 @@ export default class App extends Component {
           isLoading: false,
         })
       );
+
   };
 
   handleSearchSubmit = (e) => {
@@ -73,7 +75,8 @@ export default class App extends Component {
           <div></div>
           <div></div>
           <div></div>
-        </div> : null}
+        </div>
+          : null}
 
         {weather ? (
           <div>

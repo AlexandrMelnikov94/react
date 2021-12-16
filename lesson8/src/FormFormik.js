@@ -4,10 +4,19 @@ import {Formik, Form, Field} from "formik";
 class FormFormik extends Component {
   render() {
     return (
-      <Formik initialValues={{
-        username: '',
-        email: '',
-      }} onSubmit={(formValues) => alert(JSON.stringify(formValues))}
+      <Formik
+        initialValues={{
+          username: '',
+          email: '',
+          numberOfPerson: '',
+          numberOfChildren: '',
+          arriveDate: '',
+          departureDate: '',
+          smoke: 'no',
+          breakfast: false,
+          termsAndConditions: false
+        }}
+        onSubmit={(formValues) => alert(JSON.stringify(formValues))}
       >
         <Form>
           <div>
@@ -21,24 +30,32 @@ class FormFormik extends Component {
           </div>
 
           <fieldset>
-          <div>
-            <label>Number of person</label>
-            <Field type="number" name="numberOfPerson" min="1" max="100"/>
-          </div>
+            <div>
+              <label>Number of person</label>
+              <Field type="number"
+                     name="numberOfPerson"
+                     min="1"
+                     max="100"/>
+            </div>
             <div>
               <label>Of them children</label>
-              <Field type="number" name="numberOfChildren" min="1" max="100"/>
+              <Field type="number"
+                     name="numberOfChildren"
+                     min="1"
+                     max="100"/>
             </div>
           </fieldset>
 
           <fieldset>
             <div>
               <label>Arrival date</label>
-              <Field type="date" name="arriveDate"/>
+              <Field type="date"
+                     name="arriveDate"/>
             </div>
             <div>
               <label>Departure date</label>
-              <Field type="date" name="departureDate"/>
+              <Field type="date"
+                     name="departureDate"/>
             </div>
           </fieldset>
 
@@ -47,10 +64,10 @@ class FormFormik extends Component {
 
             <div>
               < Field
-                type = "radio"
-                name = "gender"
-                value = "yes"
-                id = "yes"
+                type="radio"
+                name="smoke"
+                value="yes"
+                id="yes"
               />
               <label for="yes">Yes</label>
             </div>
@@ -58,7 +75,7 @@ class FormFormik extends Component {
             <div>
               < Field
                 type="radio"
-                name="gender"
+                name="smoke"
                 value="no"
                 id="no"
               />

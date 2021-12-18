@@ -3,9 +3,14 @@ import {Formik, Form, Field} from "formik";
 import FormInput from "./FormInput";
 import FormCheckbox from "./FormCheckbox";
 import FormNumber from "./FormNumber";
+import FormDate from "./FormDate";
 import * as Yup from 'yup';
 
 const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+const nowDate = new Date(Date.now());
+const pastDate = new Date(Date.now() - 86400000);
+const futureDate = new Date(Date.now() + 86400000 * 30);
 
 
 class FormFormik extends Component {
@@ -29,6 +34,8 @@ class FormFormik extends Component {
           email: Yup.string().email('Email should be un correct form').required('Email is required'),
           password: Yup.string().matches(passwordRegex, 'Password should be more then 8 characters and contain at least one number and one latter').required('Password is required'),
           numberOfPerson: Yup.number().required('Number of person is required').min(1, 'More than one person needed').max(100, "Too much persons"),
+          arriveDate: Yup.date().required('Date is required').min(pastDate, "Date cannot be in the past"),
+          departureDate: Yup.date().required('Date is required').max(futureDate, "Date cannot be more than one month").min(nowDate, "Date cannot be today or less"),
           termsAndConditions: Yup.boolean().isTrue('Ypu should accept out terms and conditions')
         })}
       >
@@ -45,15 +52,14 @@ class FormFormik extends Component {
                    label="password"
                    type="password"/>
 
-
             <fieldset>
               <div>
                 <Field
-                       name="numberOfPerson"
-                       component={FormNumber}
-                       label="Number of person"
-                       type="number"
-                      />
+                  name="numberOfPerson"
+                  component={FormNumber}
+                  label="Number of person"
+                  type="number"
+                />
               </div>
               <div>
                 <label>Of them children</label>
@@ -66,14 +72,19 @@ class FormFormik extends Component {
 
             <fieldset>
               <div>
-                <label>Arrival date</label>
-                <Field type="date"
-                       name="arriveDate"/>
+                <Field
+                  name="arriveDate"
+                  component={FormDate}
+                  label="Arrive date"
+                  type="date"
+                />
               </div>
               <div>
-                <label>Departure date</label>
-                <Field type="date"
-                       name="departureDate"/>
+                <Field
+                  name="departureDate"
+                  component={FormDate}
+                  label="Departure date"
+                  type="date"/>
               </div>
             </fieldset>
 
@@ -117,7 +128,9 @@ class FormFormik extends Component {
               component={FormCheckbox}
               label="I agree with Terms and Conditions"/>
 
-            <button type="submit" disabled={!isValid}>Submit</button>
+            <button type="submit"
+                    disabled={!isValid}>Submit
+            </button>
           </Form>
         )}
       </Formik>

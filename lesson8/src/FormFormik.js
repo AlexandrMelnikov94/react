@@ -53,75 +53,65 @@ class FormFormik extends Component {
                    type="password"/>
 
             <fieldset>
-              <div>
-                <Field
-                  name="numberOfPerson"
-                  component={FormNumber}
-                  label="Number of person"
-                  type="number"
-                />
-              </div>
-              <div>
+
+              <Field
+                name="numberOfPerson"
+                component={FormNumber}
+                label="Number of person"
+                type="number"
+              />
+
                 <label>Of them children</label>
-                <Field type="number"
-                       name="numberOfChildren"
-                       min="0"
-                       max="100"/>
-              </div>
+                <Field
+                  type="number"
+                  name="numberOfChildren"
+                  min="0"
+                  max="100"
+                />
             </fieldset>
 
             <fieldset>
-              <div>
-                <Field
-                  name="arriveDate"
-                  component={FormDate}
-                  label="Arrive date"
-                  type="date"
-                />
-              </div>
-              <div>
-                <Field
-                  name="departureDate"
-                  component={FormDate}
-                  label="Departure date"
-                  type="date"/>
-              </div>
+              <Field
+                name="arriveDate"
+                component={FormDate}
+                label="Arrive date"
+                type="date"
+              />
+              <Field
+                name="departureDate"
+                component={FormDate}
+                label="Departure date"
+                type="date"/>
             </fieldset>
 
             <fieldset>
               <legend>Smoking room</legend>
 
-              <div>
-                < Field
-                  type="radio"
-                  name="smoke"
-                  value="yes"
-                  id="yes"
-                />
-                <label for="yes">Yes</label>
-              </div>
+              < Field
+                type="radio"
+                name="smoke"
+                value="yes"
+                id="yes"
+              />
+              <label for="yes">Yes</label>
 
-              <div>
-                < Field
-                  type="radio"
-                  name="smoke"
-                  value="no"
-                  id="no"
-                />
-                <label for="no">No</label>
-              </div>
+              < Field
+                type="radio"
+                name="smoke"
+                value="no"
+                id="no"
+              />
+              <label for="no">No</label>
             </fieldset>
 
-            <div>
-              <Field
-                type="checkbox"
-                name="breakfast"
-                id="breakfast"
-              />
-              <label htmlFor="breakfast">
-                Add breakfast
-              </label>
-            </div>
+            <Field
+              type="checkbox"
+              name="breakfast"
+              id="breakfast"
+            />
+            <label htmlFor="breakfast">
+              Add breakfast
+            </label>
 
             <Field
               name="termsAndConditions"
